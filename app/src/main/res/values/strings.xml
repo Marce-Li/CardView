@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">CardView</string>
+    <string name="STNombre">Marcelo</string>
+    <string name="STTelefono">Telefono</string>
+    <string name="STTitulo">Petagram</string>
+    <string name="STLike">5</string>
+</resources>
