@@ -1,4 +1,4 @@
-package com.marcelolissa.cardview;
+package com.marcelolissa.cardview.pojo;
 
 public class Contactos {
 

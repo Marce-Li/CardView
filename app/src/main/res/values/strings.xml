@@ -1,7 +1,22 @@
 <resources>
     <string name="app_name">CardView</string>
     <string name="STNombre">Marcelo</string>
+    <string name="STMiMascota">Mi mascota</string>
     <string name="STTelefono">Telefono</string>
     <string name="STTitulo">Petagram</string>
     <string name="STLike">5</string>
+    <string name="mEditar">Editar</string>
+    <string name="mBorrar">Borrar</string>
+    <string name="introNomBio">Nombre:</string>
+    <string name="nombreBio">Marcelo Eduardo Lissa</string>
+    <string name="introNacBio">Nacionalidad:</string>
+    <string name="nacBio">Argentino</string>
+    <string name="introEspBio">Especialidad:</string>
+    <string name="espBio">Ing. Electronico</string>
+    <string name="introEmailBio">Email:</string>
+    <string name="emailBio">correo@gmail.com</string>
+    <string name="receptorCorreo">Ingrese el receptor del correo</string>
+    <string name="mensajeCorreo">Mensaje:</string>
+    <string name="enviarCorreo">Enviar</string>
+    <string name="STContraseña">Contraseña:</string>
 </resources>

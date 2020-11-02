@@ -1,4 +1,4 @@
-package com.marcelolissa.cardview;
+package com.marcelolissa.cardview.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -6,6 +6,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+
+import com.marcelolissa.cardview.R;
+import com.marcelolissa.cardview.adapter.ContactoAdaptador;
+import com.marcelolissa.cardview.pojo.Contactos;
 
 import java.util.ArrayList;
 

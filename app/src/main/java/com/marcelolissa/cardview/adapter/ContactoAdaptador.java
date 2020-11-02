@@ -1,4 +1,4 @@
-package com.marcelolissa.cardview;
+package com.marcelolissa.cardview.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +8,9 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.marcelolissa.cardview.pojo.Contactos;
+import com.marcelolissa.cardview.R;
 
 import java.util.ArrayList;
 

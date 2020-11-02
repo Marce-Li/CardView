@@ -1,21 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".activity.MainActivity">
 
-   <include android:id="@+id/miActionBar"
-       layout="@layout/actionbar"
-       ></include>
-
-   <androidx.recyclerview.widget.RecyclerView
-       android:layout_marginTop="@dimen/separacionlarga"
-       android:id="@+id/rvContactos"
+   <com.google.android.material.appbar.AppBarLayout
        android:layout_width="match_parent"
-       android:layout_height="match_parent"
-       android:layout_below="@id/miActionBar"
-       />
+       android:layout_height="wrap_content"
+       android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+       >
 
-</RelativeLayout>
+      <androidx.appcompat.widget.Toolbar
+          android:id="@+id/toolbar"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          app:layout_scrollFlags="scroll|enterAlways"
+          >
+      </androidx.appcompat.widget.Toolbar>
+
+      <com.google.android.material.tabs.TabLayout
+          android:id="@+id/tabLayout"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+         >
+      </com.google.android.material.tabs.TabLayout>
+
+   </com.google.android.material.appbar.AppBarLayout>
+      <androidx.viewpager.widget.ViewPager
+          android:id="@+id/viewPager"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          app:layout_behavior="@string/appbar_scrolling_view_behavior"
+         >
+      </androidx.viewpager.widget.ViewPager>
+
+   <com.google.android.material.floatingactionbutton.FloatingActionButton
+       android:id="@+id/btnFloatBotton"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_gravity="bottom|end"
+       android:layout_margin="@dimen/STSepFloatBut"
+       android:src="@drawable/camara"
+       >
+
+   </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

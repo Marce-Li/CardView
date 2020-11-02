@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.MainActivity2">
+
+    <include android:id="@+id/miActionBar"
+        layout="@layout/actionbar"
+        ></include>
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_below="@id/miActionBar"
+    >
+        <TextView
+            android:id="@+id/tvReceptorCorreo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/receptorCorreo"
+            android:layout_marginTop="@dimen/separacionlarga"
+            android:textSize="@dimen/introBio"
+            android:layout_gravity="center"
+            />
+        <EditText
+            android:id="@+id/etCorreo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/emailBio"
+            />
+
+        <TextView
+            android:id="@+id/tvMensajeCorreo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mensajeCorreo"
+            android:layout_marginTop="@dimen/separacionlarga"
+            android:textSize="@dimen/introBio"
+            android:layout_gravity="center"
+            />
+
+        <EditText
+            android:id="@+id/etMensajeCorreo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <TextView
+            android:id="@+id/tvinfoMensajeCorreo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ingrese usuario y contraseña desde el correo donde se quiere enviar el email (Por cuestiones de seguridad no dejo un correo precargado). El correo debe ser de Gmail"
+            android:layout_marginTop="@dimen/separacionlarga"
+            android:textSize="15sp"
+            android:layout_gravity="center"
+            />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:id="@+id/tvIngresoCorreo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/introEmailBio"
+                />
+            <EditText
+                android:id="@+id/etCorreoOrigen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:id="@+id/tvIngresoContraseña"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/STContraseña"
+                />
+            <EditText
+                android:id="@+id/etContraseña"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <Button
+            android:id="@+id/btnConfirmCorreo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Confirmar correo"
+            android:layout_gravity="center"
+            />
+
+        <Button
+            android:id="@+id/btnEnviarCorreo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/enviarCorreo"
+            android:layout_gravity="center"
+            android:visibility="invisible"
+            />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+</RelativeLayout>

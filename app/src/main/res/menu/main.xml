@@ -8,5 +8,13 @@
         app:showAsAction="always"
         android:icon="@drawable/favorito"
         />
+    <item android:title="Contacto"
+        android:id="@+id/menContacto"
+        app:showAsAction="never"
+        />
+    <item android:title="Acerca de"
+        android:id="@+id/menAcercaDe"
+        app:showAsAction="never"
+        />
 
 </menu>

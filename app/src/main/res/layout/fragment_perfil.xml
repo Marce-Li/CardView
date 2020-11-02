@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/circularImage"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/benitol"
+            app:civ_border_color="#3f51b5"
+            app:civ_border_width="4dp"
+            app:civ_shadow="true"
+            app:civ_shadow_radius="10dp"
+            app:civ_shadow_color="#3f51b5"
+            tools:ignore="MissingConstraints"
+            android:layout_gravity="center"
+            app:layout_scrollFlags="scroll"/>
+
+        <TextView
+            android:id="@+id/tvCardNombreCirc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/STMiMascota"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/separacionlarga"
+            android:textSize="@dimen/dimenCardNombre"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="@dimen/separacioncorta"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginTop="@dimen/separacionlarga"
+            android:id="@+id/rvContactosCircular"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

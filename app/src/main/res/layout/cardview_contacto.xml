@@ -2,6 +2,7 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
+
     android:id="@+id/cvContato"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -69,18 +70,7 @@
                />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
-<!--
-        <TextView
-            android:id="@+id/tvCardNombre"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/STNombre"
-            android:textStyle="bold"
-            android:layout_marginTop="@dimen/separacionlarga"
-            android:textSize="@dimen/dimenCardNombre"
-            android:layout_gravity="center_horizontal"
-            />
--->
+
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 

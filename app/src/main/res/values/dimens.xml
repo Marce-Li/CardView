@@ -9,5 +9,11 @@
     <dimen name="separacioncorta">5dp</dimen>
     <dimen name="separacionextremos">80dp</dimen>
     <dimen name="tamañoImagen">250dp</dimen>
+    <dimen name="tamañoImagenGrid">170dp</dimen>
     <dimen name="elevacionActionBar">4dp</dimen>
+    <dimen name="tamañoCardGridAlto">250dp</dimen>
+    <dimen name="tamañoCardGridAncho">200dp</dimen>
+    <dimen name="introBio">25sp</dimen>
+    <dimen name="datoBio">20sp</dimen>
+    <dimen name="STSepFloatBut">16dp</dimen>
 </resources>
