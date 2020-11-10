@@ -16,7 +16,7 @@ import com.google.android.material.tabs.TabLayout;
 import com.marcelolissa.cardview.R;
 import com.marcelolissa.cardview.adapter.PageAdapter;
 import com.marcelolissa.cardview.fragment.PerfilFragment;
-import com.marcelolissa.cardview.fragment.ReciclerViewFragment;
+import com.marcelolissa.cardview.fragment.RecyclerViewFragment;
 
 import java.util.ArrayList;
 
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<Fragment> agregarFragmentes(){
         ArrayList<Fragment> fragments = new ArrayList<>();
 
-        fragments.add(new ReciclerViewFragment());
+        fragments.add(new RecyclerViewFragment());
         fragments.add(new PerfilFragment());
         return fragments;
     }

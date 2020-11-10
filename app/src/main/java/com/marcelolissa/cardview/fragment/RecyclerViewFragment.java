@@ -14,45 +14,43 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.marcelolissa.cardview.R;
 import com.marcelolissa.cardview.adapter.ContactoAdaptador;
 import com.marcelolissa.cardview.pojo.Contactos;
+import com.marcelolissa.cardview.presentador.IRecyclerViewFragmentPresenter;
+import com.marcelolissa.cardview.presentador.RecyclerViewFragmentPresenter;
 
 import java.util.ArrayList;
 
-public class ReciclerViewFragment extends Fragment {
+public class RecyclerViewFragment extends Fragment implements IRecyclerViewFragmentView {
 
     private ArrayList<Contactos> contactos;
     private RecyclerView listaContactos;
+    private IRecyclerViewFragmentPresenter presenter;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View vRecview = inflater.inflate(R.layout.fragment_reciclerview, container, false);    //equivale inflar la vista (asignar a esta clase el layout)
-        listaContactos = (RecyclerView) vRecview.findViewById(R.id.rvContactos);
 
+        listaContactos = (RecyclerView) vRecview.findViewById(R.id.rvContactos);
+        presenter = new RecyclerViewFragmentPresenter(this, getContext());
+        return vRecview;
+    }
+
+    @Override
+    public void generarLinearLayoutVertical() {
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());
         llm.setOrientation(LinearLayoutManager.VERTICAL);
 
         listaContactos.setLayoutManager(llm);
-        InicializarListaDeContactos();
-        InicializarAdaptador();
-
-        return vRecview;
-        //return super.onCreateView(inflater, container, savedInstanceState);
     }
-    public void InicializarAdaptador(){
-        ContactoAdaptador adaptador = new ContactoAdaptador(contactos);
+
+    @Override
+    public ContactoAdaptador crearAdaptador(ArrayList<Contactos> contactos) {
+        ContactoAdaptador adaptador = new ContactoAdaptador(contactos, getActivity());
+        return adaptador;
+    }
+
+    @Override
+    public void inicializarAdaptadorRV(ContactoAdaptador adaptador) {
         listaContactos.setAdapter(adaptador);
-    }
-
-    public void InicializarListaDeContactos(){
-        contactos = new ArrayList<Contactos>();
-
-        contactos.add(new Contactos("Roco", R.drawable.roco, 4));
-        contactos.add(new Contactos("Benito", R.drawable.benitol, 2));
-        contactos.add(new Contactos("Lola", R.drawable.lola, 5));
-        contactos.add(new Contactos("Terri", R.drawable.terri, 7));
-        contactos.add(new Contactos("Bastis", R.drawable.bastis, 10));
-        contactos.add(new Contactos("Noel", R.drawable.roco, 3));
-        contactos.add(new Contactos("Fini", R.drawable.terri, 4));
-        contactos.add(new Contactos("Gerry", R.drawable.bastis, 2));
     }
 }

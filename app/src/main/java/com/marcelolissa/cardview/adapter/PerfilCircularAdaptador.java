@@ -43,7 +43,7 @@ public class PerfilCircularAdaptador extends RecyclerView.Adapter<PerfilCircular
             @Override                                                                   //disminuye la cantidad de likes
             public void onClick(View v2) {
                 contaco.restarlike();
-                perfilContactoViewHolder.tvLikes.setText(Integer.toString(contaco.getLike()));
+                perfilContactoViewHolder.tvLikes.setText(Integer.toString(contaco.getLike() - contaco.getDis_like()));
             }
         });
 
