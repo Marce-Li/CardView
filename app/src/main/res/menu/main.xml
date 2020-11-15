@@ -16,5 +16,9 @@
         android:id="@+id/menAcercaDe"
         app:showAsAction="never"
         />
+    <item android:title="Configurar Cuenta"
+        android:id="@+id/configCuenta"
+        app:showAsAction="never"
+        />
 
 </menu>

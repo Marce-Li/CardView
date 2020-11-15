@@ -61,7 +61,7 @@ public class BaseDatos extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor registros = db.rawQuery(query, null);
 
-        while (registros.moveToNext()){
+/*        while (registros.moveToNext()){
             Contactos contactoActual = new Contactos();
             contactoActual.setID(registros.getInt(0));
             contactoActual.setNombre(registros.getString(1));
@@ -80,7 +80,7 @@ public class BaseDatos extends SQLiteOpenHelper {
 
             contactos.add(contactoActual);
 
-        }
+        }*/
 
         db.close();
 
@@ -146,7 +146,7 @@ public class BaseDatos extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor registros = db.rawQuery(query, null);
 
-        while (registros.moveToNext()){
+/*        while (registros.moveToNext()){
             Contactos contactoActual = new Contactos();
             contactoActual.setID(registros.getInt(0));
             contactoActual.setNombre(registros.getString(1));
@@ -165,7 +165,7 @@ public class BaseDatos extends SQLiteOpenHelper {
 
             contactos.add(contactoActual);
 
-        }
+        }*/
 
         db.close();
 

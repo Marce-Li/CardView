@@ -55,6 +55,11 @@ public class MainActivity2 extends AppCompatActivity implements IRecyclerViewFra
     }
 
     @Override
+    public void generarGridLayoutVertical() {
+        
+    }
+
+    @Override
     public ContactoAdaptador crearAdaptador(ArrayList<Contactos> contactos) {
         ContactoAdaptador adaptador = new ContactoAdaptador(contactos, this);
         return adaptador;

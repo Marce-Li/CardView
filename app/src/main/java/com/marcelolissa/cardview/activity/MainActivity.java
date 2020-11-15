@@ -83,6 +83,10 @@ public class MainActivity extends AppCompatActivity {
                 Intent intetntBio = new Intent(MainActivity.this, BioDesarrollador.class);
                 startActivity(intetntBio);
                 break;
+            case R.id.configCuenta:
+                Intent intetntConfig = new Intent(MainActivity.this, ConfigurarCuenta.class);
+                startActivity(intetntConfig);
+                break;
             default:
                 Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
         }

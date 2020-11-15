@@ -1,10 +1,12 @@
 <resources>
     <string name="app_name">CardView</string>
     <string name="STNombre">Marcelo</string>
+    <string name="STNombreApp">Petagram</string>
     <string name="STMiMascota">Mi mascota</string>
     <string name="STTelefono">Telefono</string>
     <string name="STTitulo">Petagram</string>
-    <string name="STLike">5</string>
+    <string name="STLike">0</string>
+    <string name="STFecha">Fecha</string>
     <string name="mEditar">Editar</string>
     <string name="mBorrar">Borrar</string>
     <string name="introNomBio">Nombre:</string>

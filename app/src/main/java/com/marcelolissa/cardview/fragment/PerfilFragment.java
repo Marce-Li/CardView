@@ -47,7 +47,7 @@ public class PerfilFragment extends Fragment {
     }
 
     public void InicializarListaDeContactos(){
-        contactos = new ArrayList<Contactos>();
+/*        contactos = new ArrayList<Contactos>();
 
         contactos.add(new Contactos("Lola", R.drawable.lola, 2));
         contactos.add(new Contactos("Roco", R.drawable.roco, 5));
@@ -60,6 +60,6 @@ public class PerfilFragment extends Fragment {
         contactos.add(new Contactos("Noel", R.drawable.roco, 3));
         contactos.add(new Contactos("Fini", R.drawable.terri, 4));
         contactos.add(new Contactos("Gerry", R.drawable.bastis, 2));
-
+*/
     }
 }

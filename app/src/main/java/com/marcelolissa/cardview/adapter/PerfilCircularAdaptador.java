@@ -35,7 +35,7 @@ public class PerfilCircularAdaptador extends RecyclerView.Adapter<PerfilCircular
     //Asocia cada elemento de la vista con cada view
     @Override
     public void onBindViewHolder(@NonNull final perfilContactoViewHolder perfilContactoViewHolder, int position) {
-        final Contactos contaco = contactos2.get(position);
+/*        final Contactos contaco = contactos2.get(position);
         perfilContactoViewHolder.imgCardPerfil.setImageResource(contaco.getFoto());
         perfilContactoViewHolder.tvLikes.setText(Integer.toString(contaco.getLike()));
 
@@ -46,13 +46,14 @@ public class PerfilCircularAdaptador extends RecyclerView.Adapter<PerfilCircular
                 perfilContactoViewHolder.tvLikes.setText(Integer.toString(contaco.getLike() - contaco.getDis_like()));
             }
         });
-
+*/
     }
 
     //Cantidad de elementos que contiene la lista
     @Override
     public int getItemCount() {
-        return contactos2.size();
+//        return contactos2.size();
+        return 0;
     }
 
     public static class perfilContactoViewHolder extends RecyclerView.ViewHolder{

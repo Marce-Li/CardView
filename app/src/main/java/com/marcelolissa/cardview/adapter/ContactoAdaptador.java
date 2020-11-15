@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.marcelolissa.cardview.db.ConstructorContactos;
 import com.marcelolissa.cardview.pojo.Contactos;
 import com.marcelolissa.cardview.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -34,7 +35,7 @@ public class ContactoAdaptador extends RecyclerView.Adapter<ContactoAdaptador.Co
     //Infla el layout y pasara al viewHolder para que tenga los views
     @Override
     public ContactoViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.cardview_contacto, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.cardview_grid_contacto, parent, false);
         return new ContactoViewHolder(v);
     }
 
@@ -42,30 +43,11 @@ public class ContactoAdaptador extends RecyclerView.Adapter<ContactoAdaptador.Co
     @Override
     public void onBindViewHolder(@NonNull final ContactoViewHolder contactoViewHolder, int position) {
         final Contactos contaco = contactos.get(position);
-        contactoViewHolder.imgCardPerfil.setImageResource(contaco.getFoto());
-        contactoViewHolder.tvCardNombre.setText(contaco.getNombre());
-        contactoViewHolder.tvLikes.setText(Integer.toString(contaco.getLike()));
-
-        contactoViewHolder.ivlike.setOnClickListener(new View.OnClickListener() {   //Cuando se presiona sobre el hueso blanco
-            @Override                                                               //aumenta la cantidad de likes
-            public void onClick(View v) {
-                ConstructorContactos constructorContactoslike = new ConstructorContactos(activity);
-                constructorContactoslike.darLikeCotnacto(contaco);
-                //Muestra la suma de likes y dislikes que tiene cada mascota
-                contactoViewHolder.tvLikes.setText(Integer.toString(constructorContactoslike.obtenerLikesContacto(contaco)));
-//                        - constructorContactoslike.obtenerDisLikesContacto(contaco)));
-            }
-        });
-        contactoViewHolder.ivdislike.setOnClickListener(new View.OnClickListener() {    //Cuando se presiona sobre el hueso amarillo
-            @Override                                                                   //disminuye la cantidad de likes
-            public void onClick(View v) {
-                int dislike = 0;
-                ConstructorContactos constructorContactosdislike = new ConstructorContactos(activity);
-                constructorContactosdislike.darDisLikeCotnacto(contaco);
-                //Muestra la suma de likes y dislikes que tiene cada mascota
-                contactoViewHolder.tvLikes.setText(Integer.toString(constructorContactosdislike.obtenerLikesContacto(contaco)-1));
-            }
-        });
+        Picasso.with(activity)
+                .load(contaco.getUrlFoto())
+                .placeholder(R.drawable.benitol)    //imagen en caso de que no se encuentre una imagen
+                .into(contactoViewHolder.imgCardPerfil);    //donde se debe insertar la imagen de la url
+        contactoViewHolder.tvFecha.setText((contaco.getFecha()).toString());
     }
 
     //Cantidad de elementos que contiene la lista
@@ -77,18 +59,14 @@ public class ContactoAdaptador extends RecyclerView.Adapter<ContactoAdaptador.Co
     public static class ContactoViewHolder extends RecyclerView.ViewHolder{
         //Variables para manejar cada elemento del cardView
         private ImageView imgCardPerfil;
-        private TextView tvCardNombre;
-        private TextView tvLikes;
-        private ImageView ivlike, ivdislike;
+        private TextView tvFecha;
+
 
         public ContactoViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            imgCardPerfil = (ImageView) itemView.findViewById(R.id.imgCardFoto);
-            tvCardNombre = (TextView) itemView.findViewById(R.id.tvCardNombre);
-            tvLikes = (TextView) itemView.findViewById(R.id.tvLikes);
-            ivlike = (ImageView) itemView.findViewById(R.id.ivhuesoLike);
-            ivdislike = (ImageView) itemView.findViewById(R.id.ivhuesoDisLike);
+            imgCardPerfil = (ImageView) itemView.findViewById(R.id.circularImageViewgrid);
+            tvFecha = (TextView) itemView.findViewById(R.id.tvFechaGrid);
         }
     }
 

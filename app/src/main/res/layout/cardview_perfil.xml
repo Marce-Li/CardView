@@ -20,8 +20,8 @@
 
         <ImageView
             android:id="@+id/circularImageView"
-            android:layout_width="@dimen/tamañoImagenGrid"
-            android:layout_height="@dimen/tamañoImagenGrid"
+            android:layout_width="@dimen/tamañoImagenGrid170"
+            android:layout_height="@dimen/tamañoImagenGrid170"
             android:src="@drawable/benitol"
             android:layout_gravity="center_horizontal"
             />

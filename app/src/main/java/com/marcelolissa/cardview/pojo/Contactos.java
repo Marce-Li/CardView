@@ -2,20 +2,27 @@ package com.marcelolissa.cardview.pojo;
 
 public class Contactos {
 
-    private int ID;
+    private String ID;
     private String nombre;
-    private int foto;
-    private int like = 0;
-    private int dis_like = 0;
+    private String urlFoto;
+    private String fecha;
 
-    public Contactos(String nombre, int foto, int like) {
+    public Contactos(String nombre, String urlFoto, String fecha) {
         this.nombre = nombre;
-        this.foto = foto;
-        this.like = like;
+        this.urlFoto = urlFoto;
+        this.fecha = fecha;
     }
 
     public Contactos() {
 
+    }
+
+    public String getID() {
+        return ID;
+    }
+
+    public void setID(String ID) {
+        this.ID = ID;
     }
 
     public String getNombre() {
@@ -26,28 +33,19 @@ public class Contactos {
         this.nombre = nombre;
     }
 
-    public int getFoto() {
-        return foto;
+    public String getUrlFoto() {
+        return urlFoto;
     }
 
-    public void setFoto(int foto) {
-        this.foto = foto;
+    public void setUrlFoto(String urlFoto) {
+        this.urlFoto = urlFoto;
     }
 
-    public int getLike() { return this.like; }
+    public String getFecha() {
+        return fecha;
+    }
 
-    public void setLike(int like) { this.like = like; }
-
-    public int getID() { return ID;}
-
-    public void setID(int ID) { this.ID = ID;}
-
-    public int getDis_like() { return dis_like;}
-
-    public void setDis_like(int dis_like) { this.dis_like = dis_like;}
-
-    public void sumarlike() { this.like = like + 1;}
-
-    public void restarlike() { this.dis_like = dis_like + 1;}
-
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
 }
