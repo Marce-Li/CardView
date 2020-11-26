@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">CardView</string>
     <string name="STNombre">Marcelo</string>
+    <string name="STToken">Token:</string>
     <string name="STNombreApp">Petagram</string>
     <string name="STMiMascota">Mi mascota</string>
     <string name="STTelefono">Telefono</string>

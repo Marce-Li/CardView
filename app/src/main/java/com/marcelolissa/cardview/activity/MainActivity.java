@@ -8,17 +8,26 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.marcelolissa.cardview.R;
 import com.marcelolissa.cardview.adapter.PageAdapter;
 import com.marcelolissa.cardview.fragment.PerfilFragment;
 import com.marcelolissa.cardview.fragment.RecyclerViewFragment;
+import com.marcelolissa.cardview.restApiFirebase.Endpoints;
+import com.marcelolissa.cardview.restApiFirebase.adapter.RestApiAdapter;
+import com.marcelolissa.cardview.restApiFirebase.modelo.UsuarioResponse;
 
 import java.util.ArrayList;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
+    private String TAG = "FIREBASE_TOKEN";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,6 +97,11 @@ public class MainActivity extends AppCompatActivity {
                 Intent intetntConfig = new Intent(MainActivity.this, ConfigurarCuenta.class);
                 startActivity(intetntConfig);
                 break;
+            case R.id.menNotificaciones:
+                String token = FirebaseInstanceId.getInstance().getToken();
+                Log.d(TAG, token);
+                enviarIdtokenIdUsuario(token);
+                break;
             default:
                 Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
         }
@@ -95,5 +110,26 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    private void enviarIdtokenIdUsuario(String token){
+        String USER_ID = "17841444055836399";
+        RestApiAdapter restApiAdapter = new RestApiAdapter();
+        Endpoints endpoints = restApiAdapter.establecerConexionRestApi();
+        Call<UsuarioResponse> usuarioResponseCall = endpoints.registrarUsuario(token, USER_ID);
+
+        usuarioResponseCall.enqueue(new Callback<UsuarioResponse>() {
+            @Override
+            public void onResponse(Call<UsuarioResponse> call, Response<UsuarioResponse> response) {
+                UsuarioResponse usuarioResponse = response.body();
+                Log.d("ID_FIREBASE", usuarioResponse.getId());
+                Log.d("ID_DISPOSITIVO", usuarioResponse.getId_dispositivo());
+                Log.d("ID_USUARIO", usuarioResponse.getId_usuario());
+            }
+
+            @Override
+            public void onFailure(Call<UsuarioResponse> call, Throwable t) {
+
+            }
+        });
+    }
 
 }

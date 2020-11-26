@@ -31,17 +31,12 @@ public class ContactoDeserealizador implements JsonDeserializer<ContactoResponse
             JsonObject contactoResponseDataObjet = contactoResponseData.get(i).getAsJsonObject();
 
             String urlFoto = contactoResponseDataObjet.get(JsonKeys.MEDIA_URL).getAsString();
-            String fecha = contactoResponseDataObjet.get(JsonKeys.MEDIA_FECHA).getAsString();
-            String dia = fecha.substring(8, 10);
-            String mes = fecha.substring(5, 7);
-            String año = fecha.substring(0, 4);
-
+            String like =  contactoResponseDataObjet.get(JsonKeys.MEDIA_LIKE).getAsString();
 
             Contactos contactoActual = new Contactos();
 
             contactoActual.setUrlFoto(urlFoto);
-            contactoActual.setFecha(dia + "/" + mes + "/" + año);
-
+            contactoActual.setLike(like);
             contactos.add(contactoActual);
 
         }

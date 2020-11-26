@@ -5,12 +5,11 @@ public class Contactos {
     private String ID;
     private String nombre;
     private String urlFoto;
-    private String fecha;
+    private String like;
 
-    public Contactos(String nombre, String urlFoto, String fecha) {
+    public Contactos(String nombre, String urlFoto) {
         this.nombre = nombre;
         this.urlFoto = urlFoto;
-        this.fecha = fecha;
     }
 
     public Contactos() {
@@ -41,11 +40,7 @@ public class Contactos {
         this.urlFoto = urlFoto;
     }
 
-    public String getFecha() {
-        return fecha;
-    }
+    public String getLike() { return like; }
 
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
-    }
+    public void setLike(String like) { this.like = like; }
 }

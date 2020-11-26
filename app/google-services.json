@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "59123837519",
+    "firebase_url": "https://petagramc.firebaseio.com",
+    "project_id": "petagramc",
+    "storage_bucket": "petagramc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:59123837519:android:d12b76a3449fc0391f583a",
+        "android_client_info": {
+          "package_name": "com.marcelolissa.cardview"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "59123837519-at07s24b40n5jrvemeq2201tnildepp8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.marcelolissa.cardview",
+            "certificate_hash": "8c82b2ca43f2c9943b7f44aa69fc6d9bdee3d683"
+          }
+        },
+        {
+          "client_id": "59123837519-2jg381k7ksvgc7hrr8i0s2ugam8nm1o0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClyiJySJDue3g8IlKeBkHEZtLLMwp6Gas"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "59123837519-2jg381k7ksvgc7hrr8i0s2ugam8nm1o0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

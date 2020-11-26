@@ -5,7 +5,7 @@
     <dimen name="dimenCardNombre">30sp</dimen>
     <dimen name="dimenLike">25sp</dimen>
     <dimen name="dimenFecha">20sp</dimen>
-    <dimen name="tamhueso">40dp</dimen>
+    <dimen name="tamhueso">30dp</dimen>
     <dimen name="separacionlarga">10dp</dimen>
     <dimen name="separacioncorta">5dp</dimen>
     <dimen name="separacionextremos">80dp</dimen>

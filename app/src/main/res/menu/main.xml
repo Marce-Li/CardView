@@ -20,5 +20,9 @@
         android:id="@+id/configCuenta"
         app:showAsAction="never"
         />
+    <item android:title="Recibir Notificaciones"
+        android:id="@+id/menNotificaciones"
+        app:showAsAction="never"
+        />
 
 </menu>

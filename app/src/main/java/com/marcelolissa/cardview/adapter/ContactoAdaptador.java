@@ -47,7 +47,7 @@ public class ContactoAdaptador extends RecyclerView.Adapter<ContactoAdaptador.Co
                 .load(contaco.getUrlFoto())
                 .placeholder(R.drawable.benitol)    //imagen en caso de que no se encuentre una imagen
                 .into(contactoViewHolder.imgCardPerfil);    //donde se debe insertar la imagen de la url
-        contactoViewHolder.tvFecha.setText((contaco.getFecha()).toString());
+        contactoViewHolder.tvLike.setText((contaco.getLike()).toString());
     }
 
     //Cantidad de elementos que contiene la lista
@@ -59,14 +59,14 @@ public class ContactoAdaptador extends RecyclerView.Adapter<ContactoAdaptador.Co
     public static class ContactoViewHolder extends RecyclerView.ViewHolder{
         //Variables para manejar cada elemento del cardView
         private ImageView imgCardPerfil;
-        private TextView tvFecha;
+        private TextView tvLike;
 
 
         public ContactoViewHolder(@NonNull View itemView) {
             super(itemView);
 
             imgCardPerfil = (ImageView) itemView.findViewById(R.id.circularImageViewgrid);
-            tvFecha = (TextView) itemView.findViewById(R.id.tvFechaGrid);
+            tvLike = (TextView) itemView.findViewById(R.id.tvFechaGrid);
         }
     }
 

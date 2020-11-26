@@ -41,8 +41,16 @@
                 android:layout_marginTop="@dimen/separacioncorta"
                 android:textStyle="bold"
                 android:fontFamily="casual"
-                android:text="@string/STFecha"
+                android:text="@string/STLike"
                 android:textSize="@dimen/dimenFecha"
+                />
+
+            <ImageView
+                android:id="@+id/ivhueso"
+                android:layout_width="@dimen/tamhueso"
+                android:layout_height="@dimen/tamhueso"
+                android:layout_marginLeft="@dimen/separacioncorta"
+                android:src="@drawable/hueso"
                 />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
