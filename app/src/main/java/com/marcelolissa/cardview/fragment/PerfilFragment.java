@@ -47,19 +47,19 @@ public class PerfilFragment extends Fragment {
     }
 
     public void InicializarListaDeContactos(){
-/*        contactos = new ArrayList<Contactos>();
+        contactos = new ArrayList<Contactos>();
 
-        contactos.add(new Contactos("Lola", R.drawable.lola, 2));
-        contactos.add(new Contactos("Roco", R.drawable.roco, 5));
-        contactos.add(new Contactos("Benito", R.drawable.benitol, 3));
-        contactos.add(new Contactos("Roco", R.drawable.roco, 4));
-        contactos.add(new Contactos("Benito", R.drawable.benitol, 2));
-        contactos.add(new Contactos("Lola", R.drawable.lola, 5));
-        contactos.add(new Contactos("Terri", R.drawable.terri, 7));
-        contactos.add(new Contactos("Bastis", R.drawable.bastis, 10));
-        contactos.add(new Contactos("Noel", R.drawable.roco, 3));
-        contactos.add(new Contactos("Fini", R.drawable.terri, 4));
-        contactos.add(new Contactos("Gerry", R.drawable.bastis, 2));
-*/
+        contactos.add(new Contactos("Lola", R.drawable.benitol));
+        contactos.add(new Contactos("Roco", R.drawable.roco));
+        contactos.add(new Contactos("Benito", R.drawable.benitol));
+        contactos.add(new Contactos("Roco", R.drawable.roco));
+        contactos.add(new Contactos("Benito", R.drawable.benitol));
+        contactos.add(new Contactos("Lola", R.drawable.lola));
+        contactos.add(new Contactos("Terri", R.drawable.terri));
+        contactos.add(new Contactos("Bastis", R.drawable.bastis));
+        contactos.add(new Contactos("Noel", R.drawable.roco));
+        contactos.add(new Contactos("Fini", R.drawable.terri));
+        contactos.add(new Contactos("Gerry", R.drawable.bastis));
+
     }
 }

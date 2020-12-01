@@ -32,11 +32,13 @@ public class ContactoDeserealizador implements JsonDeserializer<ContactoResponse
 
             String urlFoto = contactoResponseDataObjet.get(JsonKeys.MEDIA_URL).getAsString();
             String like =  contactoResponseDataObjet.get(JsonKeys.MEDIA_LIKE).getAsString();
+            String idFoto =  contactoResponseDataObjet.get(JsonKeys.MEDIA_ID).getAsString();
 
             Contactos contactoActual = new Contactos();
 
             contactoActual.setUrlFoto(urlFoto);
             contactoActual.setLike(like);
+            contactoActual.setIdFoto(idFoto);
             contactos.add(contactoActual);
 
         }

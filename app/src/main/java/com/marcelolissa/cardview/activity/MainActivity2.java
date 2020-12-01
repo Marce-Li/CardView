@@ -1,73 +1,75 @@
 package com.marcelolissa.cardview.activity;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
 
-import android.content.Context;
-import android.database.sqlite.SQLiteOpenHelper;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
+import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.marcelolissa.cardview.R;
-import com.marcelolissa.cardview.adapter.ContactoAdaptador;
-import com.marcelolissa.cardview.fragment.IRecyclerViewFragmentView;
-import com.marcelolissa.cardview.menufavorito.RecyclerViewFavoritoPresenter;
-import com.marcelolissa.cardview.pojo.Contactos;
-import com.marcelolissa.cardview.presentador.IRecyclerViewFragmentPresenter;
-import com.marcelolissa.cardview.presentador.RecyclerViewFragmentPresenter;
+import com.marcelolissa.cardview.adapter.PageAdapter;
+import com.marcelolissa.cardview.fragment.PerfilFragment;
+import com.marcelolissa.cardview.fragment.RecyclerViewFragment;
+import com.marcelolissa.cardview.restApiFirebase.Endpoints;
+import com.marcelolissa.cardview.restApiFirebase.adapter.RestApiAdapter;
+import com.marcelolissa.cardview.restApiFirebase.modelo.UsuarioResponse;
 
 import java.util.ArrayList;
 
-public class MainActivity2 extends AppCompatActivity implements IRecyclerViewFragmentView {
+import java.util.ArrayList;
 
-    ArrayList<Contactos> contactos;
-    SQLiteOpenHelper conexion;
+public class MainActivity2 extends AppCompatActivity {
 
-    private Context context;
-    private RecyclerView listaContactos;
-    private RecyclerViewFavoritoPresenter presenter;
+    private Toolbar toolbar;
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
+    private String TAG = "FIREBASE_TOKEN";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.activity_main);
 
-        Toolbar miActionBar = (Toolbar) findViewById(R.id.miActionBar);
-        setSupportActionBar(miActionBar);
-        getSupportActionBar().setTitle("  Petagram");
-        getSupportActionBar().setIcon(R.drawable.home);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        tabLayout = (TabLayout) findViewById(R.id.tabLayout);
+        viewPager = (ViewPager) findViewById(R.id.viewPager);
 
-        listaContactos = (RecyclerView) findViewById(R.id.rvContactos);
-        presenter = new RecyclerViewFavoritoPresenter(this, this);
+        setUpViePager();
+        if(toolbar != null){
+            setSupportActionBar(toolbar);
+        }
 
     }
 
-    @Override
-    public void generarLinearLayoutVertical() {
-        LinearLayoutManager llm = new LinearLayoutManager(this);
-        llm.setOrientation(LinearLayoutManager.VERTICAL);
+    private ArrayList<Fragment> agregarFragmentes(){
+        ArrayList<Fragment> fragments = new ArrayList<>();
 
-        listaContactos.setLayoutManager(llm);
+        fragments.add(new PerfilFragment());
+        return fragments;
     }
 
-    @Override
-    public void generarGridLayoutVertical() {
-        
+    private void setUpViePager(){
+        viewPager.setAdapter(new PageAdapter(getSupportFragmentManager(), agregarFragmentes()));
+        tabLayout.setupWithViewPager(viewPager);
+        tabLayout.getTabAt(0).setIcon(R.drawable.perro);
     }
 
-    @Override
-    public ContactoAdaptador crearAdaptador(ArrayList<Contactos> contactos) {
-        ContactoAdaptador adaptador = new ContactoAdaptador(contactos, this);
-        return adaptador;
-    }
 
     @Override
-    public void inicializarAdaptadorRV(ContactoAdaptador adaptador) {
-        listaContactos.setAdapter(adaptador);
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.main, menu);
+        return super.onCreateOptionsMenu(menu);
     }
 
 }

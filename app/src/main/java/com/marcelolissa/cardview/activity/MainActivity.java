@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
@@ -30,7 +31,6 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
-
 
     private Toolbar toolbar;
     private TabLayout tabLayout;
@@ -100,21 +100,20 @@ public class MainActivity extends AppCompatActivity {
             case R.id.menNotificaciones:
                 String token = FirebaseInstanceId.getInstance().getToken();
                 Log.d(TAG, token);
-                enviarIdtokenIdUsuario(token);
+                //enviarIdtokenIdUsuario(token);
                 break;
             default:
                 Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
         }
 
-
         return super.onOptionsItemSelected(item);
     }
 
-    private void enviarIdtokenIdUsuario(String token){
+/*    private void enviarIdtokenIdUsuario(String token){
         String USER_ID = "17841444055836399";
         RestApiAdapter restApiAdapter = new RestApiAdapter();
         Endpoints endpoints = restApiAdapter.establecerConexionRestApi();
-        Call<UsuarioResponse> usuarioResponseCall = endpoints.registrarUsuario(token, USER_ID);
+        Call<UsuarioResponse> usuarioResponseCall = endpoints.registrarUsuario(token, USER_ID,"1234");
 
         usuarioResponseCall.enqueue(new Callback<UsuarioResponse>() {
             @Override
@@ -123,6 +122,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("ID_FIREBASE", usuarioResponse.getId());
                 Log.d("ID_DISPOSITIVO", usuarioResponse.getId_dispositivo());
                 Log.d("ID_USUARIO", usuarioResponse.getId_usuario());
+
             }
 
             @Override
@@ -130,5 +130,28 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-    }
+
+
+
+    }*/
+
+/*    private void notificaciónFirebase (String Id, String Id_dispositivo){
+        UsuarioResponse usuarioResponse = new UsuarioResponse(Id_dispositivo,Id,"123","123");
+        RestApiAdapter restApiAdapter = new RestApiAdapter();
+        Endpoints endpoints = restApiAdapter.establecerConexionRestApi();
+        Call<UsuarioResponse> usuarioResponseCall = endpoints.notificacion(usuarioResponse.getId());
+        usuarioResponseCall.enqueue(new Callback<UsuarioResponse>() {
+            @Override
+            public void onResponse(Call<UsuarioResponse> call, Response<UsuarioResponse> response) {
+                UsuarioResponse usuarioResponse1 = response.body();
+                Log.d("ID_FIREBASE", usuarioResponse1.getId());
+            }
+
+            @Override
+            public void onFailure(Call<UsuarioResponse> call, Throwable t) {
+
+            }
+        });
+
+    }*/
 }

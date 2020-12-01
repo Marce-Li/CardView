@@ -50,7 +50,7 @@
                 android:layout_width="@dimen/tamhueso"
                 android:layout_height="@dimen/tamhueso"
                 android:layout_marginLeft="@dimen/separacioncorta"
-                android:src="@drawable/hueso"
+                android:src="@drawable/huesoblanco"
                 />
 
         </androidx.appcompat.widget.LinearLayoutCompat>

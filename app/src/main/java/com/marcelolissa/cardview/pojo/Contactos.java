@@ -6,10 +6,18 @@ public class Contactos {
     private String nombre;
     private String urlFoto;
     private String like;
+    private String idFoto;
+
+    private int foto;
 
     public Contactos(String nombre, String urlFoto) {
         this.nombre = nombre;
         this.urlFoto = urlFoto;
+    }
+
+    public Contactos(String nombre, int Foto) {
+        this.nombre = nombre;
+        this.foto = Foto;
     }
 
     public Contactos() {
@@ -43,4 +51,9 @@ public class Contactos {
     public String getLike() { return like; }
 
     public void setLike(String like) { this.like = like; }
+
+    public String getIdFoto() { return idFoto; }
+
+    public void setIdFoto(String idFoto) { this.idFoto = idFoto; }
+
 }

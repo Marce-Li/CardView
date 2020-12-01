@@ -16,6 +16,7 @@ import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 import com.marcelolissa.cardview.R;
 import com.marcelolissa.cardview.activity.MainActivity;
+import com.marcelolissa.cardview.activity.MainActivity2;
 
 import java.net.URI;
 
@@ -30,7 +31,7 @@ public class NotificacionService extends FirebaseMessagingService {
         // Check if message contains a notification payload.
         Log.d(TAG, "Message Notification Body: " + remoteMessage.getNotification().getBody());
 
-        Intent i = new Intent(this, MainActivity.class);
+        Intent i = new Intent(this, MainActivity2.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, i, PendingIntent.FLAG_ONE_SHOT);
 
         Uri sonido = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
