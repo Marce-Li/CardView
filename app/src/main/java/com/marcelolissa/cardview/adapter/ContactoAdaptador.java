@@ -61,6 +61,7 @@ public class ContactoAdaptador extends RecyclerView.Adapter<ContactoAdaptador.Co
         contactoViewHolder.ivhueso.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(activity, "Diste Like, espera la notificación", Toast.LENGTH_SHORT).show();
                 enviarIdtokenIdUsuario(contaco.getIdFoto());
             }
         });
