@@ -1,7 +1,7 @@
 package com.marcelolissa.cardview.firebase;
 
 import android.app.Notification;
-import android.app.NotificationManager;
+
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
@@ -9,20 +9,23 @@ import android.media.RingtoneManager;
 import android.net.Uri;
 import android.util.Log;
 
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
+import androidx.core.app.NotificationCompat.WearableExtender;
+
 import androidx.annotation.NonNull;
 import androidx.core.app.NotificationCompat;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 import com.marcelolissa.cardview.R;
-import com.marcelolissa.cardview.activity.MainActivity;
 import com.marcelolissa.cardview.activity.MainActivity2;
 
-import java.net.URI;
 
 public class NotificacionService extends FirebaseMessagingService {
 
     private static final String TAG = "FIREBASE";
+    public static final int NOTIFICACION_ID = 001;
 
     @Override
     public void onMessageReceived(@NonNull RemoteMessage remoteMessage) {
@@ -36,15 +39,26 @@ public class NotificacionService extends FirebaseMessagingService {
 
         Uri sonido = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 
-        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
-                        .setSmallIcon(R.drawable.huesoblanco)
-                        .setContentTitle("Notificación")
-                        .setContentText(remoteMessage.getNotification().getBody())
-                        .setAutoCancel(true)
-                        .setSound(sonido)
-                        .setContentIntent(pendingIntent);
+        NotificationCompat.Action action = new NotificationCompat.Action.Builder(R.drawable.ic_full_huesoblanco,
+                getString(R.string.Notificaicon), pendingIntent)
+                .build();
 
-        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-        notificationManager.notify(0, notificationBuilder.build());
+        NotificationCompat.WearableExtender wearableExtender = new NotificationCompat.WearableExtender();
+
+        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
+                .setSmallIcon(R.drawable.huesoblanco)
+                .setContentTitle(remoteMessage.getNotification().getTitle())
+                .setContentText(remoteMessage.getNotification().getBody())
+                .setSound(sonido)
+                .setContentIntent(pendingIntent)
+                .setAutoCancel(true)
+                .extend(wearableExtender.addAction(action))
+                //.addAction(R.drawable.ic_full_huesoblanco,getString(R.string.Notificaicon), pendingIntent)
+                ;
+
+        NotificationManagerCompat notificationManagerCompat =
+                NotificationManagerCompat.from(this);
+        notificationManagerCompat.notify(NOTIFICACION_ID, notificationBuilder.build());
+
     }
 }

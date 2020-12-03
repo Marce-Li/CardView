@@ -22,4 +22,5 @@
     <string name="mensajeCorreo">Mensaje:</string>
     <string name="enviarCorreo">Enviar</string>
     <string name="STContraseña">Contraseña:</string>
+    <string name="Notificaicon">Abrir perfil</string>
 </resources>

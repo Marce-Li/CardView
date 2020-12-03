@@ -11,7 +11,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
+
 import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
@@ -20,15 +20,10 @@ import com.marcelolissa.cardview.R;
 import com.marcelolissa.cardview.adapter.PageAdapter;
 import com.marcelolissa.cardview.fragment.PerfilFragment;
 import com.marcelolissa.cardview.fragment.RecyclerViewFragment;
-import com.marcelolissa.cardview.restApiFirebase.Endpoints;
-import com.marcelolissa.cardview.restApiFirebase.adapter.RestApiAdapter;
-import com.marcelolissa.cardview.restApiFirebase.modelo.UsuarioResponse;
+
 
 import java.util.ArrayList;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 

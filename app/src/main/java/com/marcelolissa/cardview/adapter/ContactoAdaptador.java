@@ -1,6 +1,7 @@
 package com.marcelolissa.cardview.adapter;
 
 import android.app.Activity;
+
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,7 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.iid.FirebaseInstanceId;
-import com.marcelolissa.cardview.db.ConstructorContactos;
+
 import com.marcelolissa.cardview.pojo.Contactos;
 import com.marcelolissa.cardview.R;
 import com.marcelolissa.cardview.restApiFirebase.Endpoints;
@@ -130,6 +131,5 @@ public class ContactoAdaptador extends RecyclerView.Adapter<ContactoAdaptador.Co
             }
         });
     }
-
 
 }
